@@ -67,7 +67,7 @@ export default function Calendar() {
   generateCalendar()
   return (
     <main className="mt-[5px] h-screen bg-white rounded-t-lg">
-      <div className="bg-red-600 h-16 border border-red-500 rounded-t-lg capitalize flex justify-between items-center text-4xl">
+      <div className="bg-red-600 h-16 border border-red-500 rounded-t-lg capitalize flex justify-between items-center text-3xl">
         <button
           onClick={() => {
             changeMonth(-1)
