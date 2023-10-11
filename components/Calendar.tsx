@@ -20,13 +20,13 @@ export default function Calendar() {
       const dayOfWeekNumber = currentDate.getDay()
       const dayofMonthNumber = currentDate.getDate()
       const dayNames = [
-        'Saturday',
         'Sunday',
         'Monday',
         'Tuesday',
         'Wednesday',
         'Thursday',
         'Friday',
+        'Saturday',
       ]
       const dayOfWeek = dayNames[dayOfWeekNumber]
       days.push({
@@ -36,12 +36,13 @@ export default function Calendar() {
         dayofMonthNbr: dayofMonthNumber,
       })
     }
+    console.log(days)
     return days
   }
   const generateCalendar = useCallback((month?: number) => {
     const currentDate = new Date()
     const currentYear = currentDate.getFullYear()
-    const currentMonth = month ? month : currentDate.getMonth() + 1 // Month is zero-based
+    const currentMonth = month != undefined ? month : currentDate.getMonth() + 1 // Month is zero-based
 
     const calendarValues = getDaysOfMonth(currentYear, currentMonth)
     return calendarValues
@@ -57,10 +58,9 @@ export default function Calendar() {
   }, [month, generateCalendar])
 
   const changeMonth = (value: number) => {
-    console.log(month)
     let newMonth = month + value
     if (newMonth > 12) newMonth = 1
-    // else if (newMonth < 0) newMonth = 11
+    else if (newMonth < 0) newMonth = 11
     setMonth(newMonth)
   }
 

@@ -8,7 +8,13 @@ const CalendarDates = ({
   index: number
 }) => {
   const date = new Date()
-  // console.log(date.toISOString() + '//' + item.currentDate.toISOString())
+  if (
+    date.toISOString().slice(0, 10) ===
+    item.currentDate.toISOString().slice(0, 10)
+  ) {
+    console.log(date.toISOString() + '//' + item.currentDate.toISOString())
+    console.log(item.dayofWeekstr)
+  }
   if (index === 0) {
     const overflowDates = []
     for (
@@ -19,9 +25,12 @@ const CalendarDates = ({
       overflowDates.push(<div />)
     }
     overflowDates.push(
-      <div className="bg-zinc-50 border border-black w-[43px] h-[62px] flex flex-col justify-around items-center text-gray-950 text-2xl">
+      <div className="bg-zinc-50 border border-black w-[43px] h-[62px] flex flex-col justify-around items-center text-gray-950 text-2xl relative">
+        {date.getDate() === item.dayofMonthNbr &&
+          date.getMonth() === item.currentDate.getMonth() && (
+            <div className="absolute top-[-10px] w-20 h-20 border-2 border-red-500 rounded-full z-10" />
+          )}
         <div>{item.dayofMonthNbr}</div>
-        <div>X</div>
       </div>,
     )
     return overflowDates.map((item, key) => {
@@ -31,11 +40,11 @@ const CalendarDates = ({
     return (
       <>
         <div className="bg-zinc-50 border border-black w-[43px] h-[62px] flex flex-col justify-around items-center text-gray-950 text-2xl relative">
-          {date.getDate() === item.currentDate.getDate() && (
-            <div className="absolute top-[-10px] w-20 h-20 border-2 border-red-500 rounded-full z-10" />
-          )}
+          {date.getDate() === item.dayofMonthNbr &&
+            date.getMonth() === item.currentDate.getMonth() && (
+              <div className="absolute top-[-10px] w-20 h-20 border-2 border-red-500 rounded-full z-10" />
+            )}
           <div>{item.dayofMonthNbr}</div>
-          <div>X</div>
         </div>
       </>
     )
