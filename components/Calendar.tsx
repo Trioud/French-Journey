@@ -2,12 +2,14 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import CalendarDates from './CalendarDates'
+import data from '../data/dates.json'
 
 export interface CalendarType {
   currentDate: Date
   dayofWeekstr: string
   dayofWeekNbr: number
   dayofMonthNbr: number
+  icon?: string
 }
 
 export default function Calendar() {
@@ -28,15 +30,33 @@ export default function Calendar() {
         'Friday',
         'Saturday',
       ]
+      const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ]
+      const monthStr = monthNames[month - 1]
+      // console.log(monthStr)
+      // console.log(data[monthStr][dayofMonthNumber.toString()])
+      // console.log(data['January'][1])
       const dayOfWeek = dayNames[dayOfWeekNumber]
       days.push({
         currentDate: currentDate,
         dayofWeekstr: dayOfWeek,
         dayofWeekNbr: dayOfWeekNumber,
         dayofMonthNbr: dayofMonthNumber,
+        icon: data[monthStr][dayofMonthNumber.toString()],
       })
     }
-    console.log(days)
     return days
   }
   const generateCalendar = useCallback((month?: number) => {
@@ -66,7 +86,7 @@ export default function Calendar() {
 
   generateCalendar()
   return (
-    <main className="mt-[5px] h-screen bg-white rounded-t-lg">
+    <main className="mt-[5px] h-full overflow-hidden bg-white rounded-t-lg">
       <div className="bg-red-600 h-16 border border-red-500 rounded-t-lg capitalize flex justify-between items-center text-3xl">
         <button
           onClick={() => {

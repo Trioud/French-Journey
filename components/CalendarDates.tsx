@@ -31,6 +31,7 @@ const CalendarDates = ({
             <div className="absolute top-[-10px] w-20 h-20 border-2 border-red-500 rounded-full z-10" />
           )}
         <div>{item.dayofMonthNbr}</div>
+        <div className="text-lg">{item.icon}</div>
       </div>,
     )
     return overflowDates.map((item, key) => {
@@ -45,6 +46,7 @@ const CalendarDates = ({
               <div className="absolute top-[-10px] w-20 h-20 border-2 border-red-500 rounded-full z-10" />
             )}
           <div>{item.dayofMonthNbr}</div>
+          <div className="text-lg">{item.icon}</div>
         </div>
       </>
     )
