@@ -9,8 +9,26 @@ export interface CalendarType {
   dayofWeekstr: string
   dayofWeekNbr: number
   dayofMonthNbr: number
-  icon?: string
+  icon?: string | undefined
 }
+
+interface MapIcon {
+  [key: string]: { [key: string]: string | undefined }
+}
+
+type Month =
+  | 'January'
+  | 'February'
+  | 'March'
+  | 'April'
+  | 'May'
+  | 'June'
+  | 'July'
+  | 'August'
+  | 'September'
+  | 'October'
+  | 'November'
+  | 'December'
 
 export default function Calendar() {
   const getDaysOfMonth = (year: number, month: number): CalendarType[] => {
@@ -30,7 +48,7 @@ export default function Calendar() {
         'Friday',
         'Saturday',
       ]
-      const monthNames = [
+      const monthNames: Month[] = [
         'January',
         'February',
         'March',
@@ -48,13 +66,15 @@ export default function Calendar() {
       // console.log(monthStr)
       // console.log(data[monthStr][dayofMonthNumber.toString()])
       // console.log(data['January'][1])
+      const dataStock: MapIcon = data
       const dayOfWeek = dayNames[dayOfWeekNumber]
+      const icon = dataStock[monthStr as Month]?.[dayofMonthNumber.toString()]
       days.push({
         currentDate: currentDate,
         dayofWeekstr: dayOfWeek,
         dayofWeekNbr: dayOfWeekNumber,
         dayofMonthNbr: dayofMonthNumber,
-        icon: data[monthStr][dayofMonthNumber.toString()],
+        icon: icon,
       })
     }
     return days

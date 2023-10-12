@@ -1,4 +1,5 @@
 import { CalendarType } from './Calendar'
+import Link from 'next/link'
 
 const CalendarDates = ({
   item,
@@ -37,7 +38,26 @@ const CalendarDates = ({
     return overflowDates.map((item, key) => {
       return item
     })
-  } else
+  } else if (
+    date.getDate() === item.dayofMonthNbr &&
+    date.getMonth() === item.currentDate.getMonth()
+  ) {
+    return (
+      <>
+        <Link
+          href={'birthday'}
+          className="bg-zinc-50 border border-black w-[43px] h-[62px] flex flex-col justify-around items-center text-gray-950 text-2xl relative"
+        >
+          {date.getDate() === item.dayofMonthNbr &&
+            date.getMonth() === item.currentDate.getMonth() && (
+              <div className="absolute top-[-10px] w-20 h-20 border-2 border-red-500 rounded-full z-10" />
+            )}
+          <div>{item.dayofMonthNbr}</div>
+          <div className="text-lg">{item.icon}</div>
+        </Link>
+      </>
+    )
+  } else {
     return (
       <>
         <div className="bg-zinc-50 border border-black w-[43px] h-[62px] flex flex-col justify-around items-center text-gray-950 text-2xl relative">
@@ -50,6 +70,7 @@ const CalendarDates = ({
         </div>
       </>
     )
+  }
 }
 
 export default CalendarDates
