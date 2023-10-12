@@ -1,19 +1,28 @@
-import Calendar from '../../components/Calendar'
+import Link from 'next/link'
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="bg-blue-200 min-h-screen flex items-center justify-center">
-      <div
-        className="bg-white rounded-lg shadow-lg w-[390px] h-[844px]"
-        style={{ backgroundImage: 'url("/background.jpeg")' }}
-      >
-        <section className="w-full h-full flex flex-col">
-          <h1 className="text-2xl text-center p-8 text-[#0047FF]">
-            Notre histoire d&apos;amour
-          </h1>
-          <Calendar />
-        </section>
+    <section className="h-screen w-screen flex flex-col justify-center items-center gap-3">
+      <div className="text-6xl m-6 text-center">Happy Birthday my love !</div>
+      <div className="text-4xl text-center">
+        I made a little calendar for you to remember all our incredible love
+        story
       </div>
-    </main>
+      <div className="text-3xl text-center">
+        Try to guess what the emojis mean for each date !
+      </div>
+      <div className="text-3xl text-center">
+        Press your birthday to find a secret :D
+      </div>
+      <div className="text-3xl text-center">{`Let's go back in time, back to March 30th the first time I met the most wonderful woman ever : You !`}</div>
+      <Link
+        href={'/calendar'}
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-3xl px-4 py-10 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Click me to go back in time !!
+      </Link>
+    </section>
   )
 }
+
+export default Home

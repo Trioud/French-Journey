@@ -82,7 +82,7 @@ export default function Calendar() {
   const generateCalendar = useCallback((month?: number) => {
     const currentDate = new Date()
     const currentYear = currentDate.getFullYear()
-    const currentMonth = month != undefined ? month : currentDate.getMonth() + 1 // Month is zero-based
+    const currentMonth = month != undefined ? month : 3 // Month is zero-based
 
     const calendarValues = getDaysOfMonth(currentYear, currentMonth)
     return calendarValues
@@ -90,7 +90,7 @@ export default function Calendar() {
 
   const date = new Date()
   const [calendar, setCalendar] = useState(generateCalendar())
-  const [month, setMonth] = useState(date.getMonth() + 1)
+  const [month, setMonth] = useState(3)
 
   useEffect(() => {
     const generatedCalendar = generateCalendar(month)
