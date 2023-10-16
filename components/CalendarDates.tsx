@@ -45,7 +45,7 @@ const CalendarDates = ({
     return (
       <>
         <Link
-          href={'birthday'}
+          href={'french'}
           className="bg-zinc-50 border border-black w-[43px] h-[62px] flex flex-col justify-around items-center text-gray-950 text-2xl relative"
         >
           {date.getDate() === item.dayofMonthNbr &&
