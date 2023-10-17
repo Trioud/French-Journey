@@ -9,27 +9,19 @@ const French = () => {
       <div className="p-4 border rounded-md w-full bg-pink-300">
         <div className="text-center p-4">
           <h1>{currentDay + ' ' + currentMonth + ' ' + currentYear}</h1>
-          <h2>Aimer et adorer ?</h2>
-          <h2>Love or Enjoy ?</h2>
+          <h2>{`S'ennuyer`}</h2>
+          <h2>{`Being Bored`}</h2>
         </div>
         <div className="p-1">
           <p>
-            {`In French, we don't use Love the same way that they do in English. When someone enjoys something
-                they say in French :`}
+            {`In French, when we are bored we will use the french verb S'ennuyer. This verb is in the First group`}
           </p>
-          <p className="text-red-500">{`J'aime bien ça ! => I like that !`}</p>
-          <p className="text-red-500">{`J'aime le Nutella ! => I like Nutella !`}</p>
-          <p className="text-red-500">{`J'aime le Nutella ! => I like Nutella !`}</p>
+          <p className="text-red-500">{`I'm bored ! => Je m'ennuie !`}</p>
+          <p className="text-red-500">{`Tu t'ennuies ? => Are you bored ?`}</p>
+          <p className="text-red-500">{`On s'ennuie... => We are bored`}</p>
           <br />
           <p>
-            {`When we use the verb Adorer, it means that we really like something but never in a loving romantical way`}
-          </p>
-          <br />
-          <p className="text-red-500">{`J'adore le Nutella ! => I really like Nutella !`}</p>
-          <p className="text-red-500">{`J'adore ce que tu me dis. => I really like what you are telling me.`}</p>
-          <br />
-          <p>
-            {`For romantic ways, you know how to say it, send it to me in French when you finish with this emoji 💞`}
+            {`Send me the French translation for : I'm bored when I'm not with my boyfriend 😂😉`}
           </p>
         </div>
       </div>
