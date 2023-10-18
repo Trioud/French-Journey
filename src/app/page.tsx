@@ -2,7 +2,7 @@ import Calendar from '../../components/Calendar'
 
 export default function Home() {
   return (
-    <main className="bg-blue-200 min-h-screen flex items-center justify-center">
+    <main className="bg-blue-200 min-h-screen flex items-center justify-center font-sans">
       <div
         className="bg-white rounded-lg shadow-lg w-[390px] h-[844px]"
         style={{ backgroundImage: 'url("/background.jpeg")' }}

@@ -1,8 +1,17 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Pacifico } from 'next/font/google'
+import { Pacifico, Roboto_Mono } from 'next/font/google'
 
-const pacifico = Pacifico({ weight: '400', subsets: ['cyrillic'] })
+const pacifico = Pacifico({
+  weight: '400',
+  subsets: ['cyrillic'],
+  variable: '--font-pacifico',
+})
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'French Journey',
@@ -16,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={pacifico.className}>{children}</body>
+    <html lang="en" className={`${pacifico.variable} ${roboto_mono.variable}`}>
+      <body>{children}</body>
     </html>
   )
 }
