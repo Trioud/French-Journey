@@ -1,4 +1,4 @@
-const FrenchHalloweenLesson = () => {
+const FrenchPetsLesson = () => {
   const currentDate = new Date()
   const currentMonth = currentDate.toLocaleString('default', { month: 'long' })
   const currentDay = currentDate.getDate()
@@ -9,29 +9,29 @@ const FrenchHalloweenLesson = () => {
       <div className="p-4 border rounded-md w-full bg-pink-300">
         <div className="text-center p-4 font-sans">
           <h1>{currentDay + ' ' + currentMonth + ' ' + currentYear}</h1>
-          <h2>{`Lesson on Halloween`}</h2>
-          <h2>{`Leçon sur Halloween`}</h2>
+          <h2>{`Lesson on Pets`}</h2>
+          <h2>{`Leçon sur les Animaux de Compagnie`}</h2>
         </div>
         <div className="font-mono">
-          <div className="text-white-300">{`Halloween is a popular holiday celebrated on October 31st`}</div>
-          <div className="text-red-600">{`Halloween est une fête populaire célébrée le 31 octobre`}</div>
+          <div className="text-white-300">{`Pets are animals kept for companionship and enjoyment`}</div>
+          <div className="text-red-600">{`Les animaux de compagnie sont des animaux gardés pour la compagnie et le plaisir`}</div>
 
-          <div className="text-white-300">{`It is known for its traditions, including dressing up in costumes, carving pumpkins, and going trick-or-treating`}</div>
-          <div className="text-red-600">{`Elle est connue pour ses traditions, notamment se déguiser, sculpter des citrouilles et faire du porte-à-porte pour demander des bonbons`}</div>
+          <div className="text-white-300">{`Common pets include dogs, cats, birds, fish, and small mammals like hamsters and guinea pigs`}</div>
+          <div className="text-red-600">{`Les animaux de compagnie courants comprennent les chiens, les chats, les oiseaux, les poissons et les petits mammifères comme les hamsters et les cochons d'Inde`}</div>
 
-          <div className="text-white-300">{`Halloween is a time for spooky decorations and haunted houses, creating a sense of thrill and excitement`}</div>
-          <div className="text-red-600">{`Halloween est une période de décorations effrayantes et de maisons hantées, créant une ambiance d'excitation et de frisson`}</div>
+          <div className="text-white-300">{`Pets provide companionship, love, and can improve mental and physical well-being for their owners`}</div>
+          <div className="text-red-600">{`Les animaux de compagnie offrent de la compagnie, de l'amour et peuvent améliorer le bien-être mental et physique de leurs propriétaires`}</div>
 
-          <div className="text-white-300">{`The holiday originated from ancient Celtic festivals, such as Samhain, and has evolved over the centuries`}</div>
-          <div className="text-red-600">{`La fête trouve son origine dans d'anciens festivals celtiques, tels que Samhain, et a évolué au fil des siècles`}</div>
+          <div className="text-white-300">{`Taking care of a pet includes providing food, shelter, and regular veterinary care`}</div>
+          <div className="text-red-600">{`Prendre soin d'un animal de compagnie comprend la fourniture de nourriture, d'un abri et de soins vétérinaires réguliers`}</div>
 
-          <div className="text-white-300">{`Share your favorite Halloween memory or costume on WeChat, in both French`}</div>
-          <div className="text-red-600">{`Partagez votre meilleur souvenir d'Halloween ou votre costume sur WeChat, en français`}</div>
-          <audio controls src={'/31-10-2023.m4a'}></audio>
+          <div className="text-white-300">{`What is your favorite animal ?`}</div>
+          <div className="text-red-600">{`Quel est votre animal préféré ?`}</div>
+          <audio controls src={'/11-02-2023.m4a'}></audio>
         </div>
       </div>
     </div>
   )
 }
 
-export default FrenchHalloweenLesson
+export default FrenchPetsLesson
